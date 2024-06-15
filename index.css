@@ -1,0 +1,148 @@
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center; /* Align items vertically */
+    }
+
+    nav ul li {
+        margin-right: 20px;
+        position: relative;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+    }
+
+    nav ul li a::before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: rgb(255, 255, 255);
+        transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::before {
+        width: 100%;
+    }
+
+    .search-box {
+        display: flex; /* Use flexbox to align search input and icon */
+        align-items: center; /* Align items vertically */
+    }
+
+    .search-input {
+        padding: 5px 25px; /* Adjust padding to accommodate icon */
+        border-radius: 5px; /* Optional: add border radius */
+    }
+
+    .search-icon {
+        position: absolute;
+        right: 20px; /* Adjust right spacing of icon */
+        width: 20px;
+        height: 20px;
+        fill: #555; /* icon color */
+        cursor: pointer;
+    }
+
+    .arrow-svg {
+        width: 10px;
+        height: 10px;
+        fill: #fff;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    nav ul li:hover .arrow-svg {
+        transform: rotateX(180deg);
+    }
+
+    h1 {
+        transition: text-shadow 0.3s ease;
+    }
+
+    h1:hover {
+        text-shadow: 2px 2px 5px red;
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+     /* Styles for responsive layout */
+     @media only screen and (max-width: 600px) {
+        header {
+            padding: 10px;
+        }
+        .header-content {
+            flex-direction: column;
+            align-items: center;
+        }
+        .logo {
+            margin-bottom: 10px;
+        }
+        nav {
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: none; /* Hide the menu by default */
+            flex-direction: column;
+            align-items: center;
+        }
+        nav ul.active {
+            display: flex; /* Show the menu when active class is added */
+        }
+        nav ul li {
+            margin: 5px 0;
+        }
+        .search-box {
+            position: relative;
+            margin-top: 10px;
+        }
+        .search-input {
+            width: 100%;
+        }
+        .search-icon {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .white-text {
+            color: white; /* Toggle text color to white */
+        }
+    }
